@@ -1,4 +1,4 @@
-package zadDoDomu;
+package exercise;
 
 public enum UserCredentialsValidator {
 

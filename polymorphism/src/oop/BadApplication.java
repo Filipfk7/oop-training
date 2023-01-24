@@ -1,4 +1,4 @@
-package OOP;
+package oop;
 
 public class BadApplication {
     public static void main(String[] args) {

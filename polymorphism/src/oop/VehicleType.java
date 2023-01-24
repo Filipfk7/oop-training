@@ -1,4 +1,4 @@
-package OOP;
+package oop;
 
 public enum VehicleType {
     PLANE, CAR, BIKE;

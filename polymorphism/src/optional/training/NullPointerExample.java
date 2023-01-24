@@ -1,11 +1,9 @@
-package Optional;
+package optional.training;
 
-import zadDoDomu.Database;
-import zadDoDomu.ListDatabase;
-import zadDoDomu.MapDatabase;
-import zadDoDomu.User;
+import exercise.Database;
+import exercise.ListDatabase;
+import exercise.User;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class NullPointerExample {

@@ -1,4 +1,4 @@
-package zadDoDomu;
+package exercise;
 
 import java.util.Set;
 

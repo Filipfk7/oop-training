@@ -1,4 +1,4 @@
-package zadDoDomu;
+package exercise;
 
 import java.util.*;
 import java.util.stream.Collectors;
