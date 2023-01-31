@@ -1,4 +1,4 @@
-package exercise;
+package database.polimorfizm;
 
 public enum UserCredentialsValidator {
 

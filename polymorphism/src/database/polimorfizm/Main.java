@@ -1,4 +1,4 @@
-package exercise;
+package database.polimorfizm;
 
 import java.util.*;
 import java.util.stream.Collectors;
