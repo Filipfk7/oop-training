@@ -1,5 +1,7 @@
 package database.polimorfizm;
 
+import utils.MockData;
+
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -10,18 +12,7 @@ public class Main {
     }
 
     private static void testDatabase(Database database) {
-        User maciek = new User("maciek@wp.pl", "pass", "Maciek", "Maciek");
-        User pawel = new User("pawel@gmail.com","haslo", "Pawel", "Pawel");
-        User piotr = new User("piotr@wp.pl", "321", "Piotr", "Piotr");
-        User filip = new User("filip@gmail.com", "555", "Filip", "Filip");
-        database.insert(maciek);
-        database.insert(pawel);
-        database.insert(piotr);
-        database.insert(filip);
-        maciek.setSubjects(Set.of(Subject.GEOGRAPHY));
-        pawel.setSubjects(Set.of(Subject.IT, Subject.PE, Subject.MATH));
-        piotr.setSubjects(Set.of(Subject.IT));
-        filip.setSubjects(Set.of(Subject.HISTORY, Subject.MATH,  Subject.IT, Subject.PE));
+        MockData.INSTANCE.mockUsers().forEach(database::insert);
 
         //        long start1 = System.nanoTime();
 //        Set<String> subjects = database.findAll().stream()

@@ -1,5 +1,6 @@
 package database.polimorfizm;
 
+import java.util.HashSet;
 import java.util.Set;
 
 public class User {
@@ -7,7 +8,7 @@ public class User {
     private String password;
     private String firstName;
     private String lastName;
-    private Set<Subject> subjects;
+    private Set<Subject> subjects = new HashSet<>();
 
     public User() {}
 
@@ -16,6 +17,14 @@ public class User {
         this.password = password;
         this.firstName = firstName;
         this.lastName = lastName;
+    }
+
+    public User(String email, String password, String firstName, String lastName, Set<Subject> subjects) {
+        this.email = email;
+        this.password = password;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.subjects.addAll(subjects);
     }
 
     public String getEmail() {
