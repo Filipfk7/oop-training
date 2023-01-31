@@ -5,12 +5,15 @@ import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
+        testDatabase(new ListDatabase());
+        testDatabase(new MapDatabase());
+    }
 
+    private static void testDatabase(Database database) {
         User maciek = new User("maciek@wp.pl", "pass", "Maciek", "Maciek");
         User pawel = new User("pawel@gmail.com","haslo", "Pawel", "Pawel");
         User piotr = new User("piotr@wp.pl", "321", "Piotr", "Piotr");
         User filip = new User("filip@gmail.com", "555", "Filip", "Filip");
-        Database database = new ListDatabase();
         database.insert(maciek);
         database.insert(pawel);
         database.insert(piotr);
@@ -20,8 +23,7 @@ public class Main {
         piotr.setSubjects(Set.of(Subject.IT));
         filip.setSubjects(Set.of(Subject.HISTORY, Subject.MATH,  Subject.IT, Subject.PE));
 
-
-//        long start1 = System.nanoTime();
+        //        long start1 = System.nanoTime();
 //        Set<String> subjects = database.findAll().stream()
 //                .filter(element -> element.getSubjects().contains(Subject.IT))
 //                .map(User::getEmail)
@@ -55,15 +57,12 @@ public class Main {
                 .flatMap(Collection::stream)
                 .collect(Collectors.toSet()));
 
-
-
 //        System.out.println(database.findAll());
 //        database.update("filip@gmail.com", new User("philip@wp.pl","password","Filip", "Filipek"));
 //        database.findByEmail("philip@wp.pl");
 //        System.out.println(database.findAll());
 //        database.delete("philip@wp.pl");
 //        System.out.println(database.findAll());
-
     }
 
     private static boolean hasMostSubjects(Collection<User> users, User user) {
